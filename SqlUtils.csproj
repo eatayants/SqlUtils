@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.3077</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30833790-88EF-4C31-90C2-B8D09CB51402}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>SqlUtils</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Exe</OutputType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>SqlUtils</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SqlUtils.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Management">
+      <Name>System.Management</Name>
+    </Reference>
+    <Reference Include="System.ServiceProcess">
+      <Name>System.ServiceProcess</Name>
+    </Reference>
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\ClearHistoryCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\CloseLogCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\CommandLineParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\CommandParserException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\CommandParserInvalidArgumentsException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\CommandParserInvalidCommandException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\AttachDatabaseCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\CreateDatabaseCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\CreateScriptCommand.cs" />
+    <Compile Include="Commands\DetachDatabasesCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\EnableTracingCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\EngineCommandContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\ICommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\IEngineCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\ISimpleCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\IsSignedDatabaseCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\ListChildInstancesCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\ListDatabasesCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\ListServersCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\RunCommandFileCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\RunConsoleCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\ShowHelpCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\ShowHelpContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\ShowVersionCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\ShrinkDatabaseCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\SignDatabaseCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\ConcatCommand.cs" />
+    <Compile Include="Commands\UpgradeDatabasesCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\CommandTimeoutCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigSettings\ConcatSetting.cs" />
+    <Compile Include="ConfigSettings\configExtention.cs" />
+    <Compile Include="Execution\ConnectionManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\ConnectionOptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Console\ConsoleCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Console\ConsoleCommandParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Console\ConsoleHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Console\ConsoleUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Console\ConsoleWindowCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\DatabaseIdentifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\DatabaseInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\DataUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\Engine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Formatting\DataRecordRowFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Formatting\DataRowRowFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Formatting\IRowFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Formatting\ITableFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Formatting\SimpleTableFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Formatting\TableFormatterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Help.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\History.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\InternalException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\InvalidPathException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\ISqlConsole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\LoggingTextReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\LoggingTextWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\MissingFileException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\OpenLogCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\PathUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Program.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\ProgramInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Execution\SaveHistoryCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Scripting\Block.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Scripting\CommandBlock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Scripting\ScriptObject.cs" />
+    <Compile Include="Scripting\ScriptDocument.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Scripting\ScriptEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\Settings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\ShowHistoryCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\SqlConnectionFailureDiagnostics.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\SqlConnectionWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\SqlConsole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\SqlConsoleHelp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\SqlDataSourceInformation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\SqlServerEnumerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\StrongName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\TimerCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\UserCanceledException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\Util.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Execution\WriterInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigSettings\ConcatConfigSection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="qs.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>
